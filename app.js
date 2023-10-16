@@ -69,7 +69,8 @@ app.post("/signup", (req, res) => {
       console.log("Successfully saved to database");
       sendmail(email, "You have successfully logged in.");
     }
-    res.render("signup_success");
+    alert("You have successfully logged in");
+    res.json({message: "You have successfully logged in."})
   });
 });
 
