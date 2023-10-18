@@ -33,6 +33,10 @@ app.get('/signup',(req,res)=>{
     res.render('signup');
 })
 let db=mongoose.connection;
+// adding logout route
+app.get('/logout', (req,res)=>{
+    res.redirect('/');
+})
 db.once('open',()=>{console.log("successfully connected")});
 db.on('err',()=>{console.log("error in connecting to database")});
 app.get('/signup_success',(req,res)=>{
